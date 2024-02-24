@@ -1,0 +1,35 @@
+<!-- 
+  THIS IS AN EXAMPLE to show how to send values to a DataTable
+  Key variables: DATA is a list
+  Uses the BASELIST template for formatting and javascript. Just add content 
+-->
+
+{% extends "baseList.html" %} 
+
+{% block content %}
+<div style="flex:50%; float: left; padding: 20px;">
+
+  <table id = "listTable" class=display flex="50%">
+    <thead>
+      <tr>
+        <!-- Do the filtering through the columns -->
+        <th>ID</th>
+        <th>Committee Name</th>
+        <th>Abbreviation</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for com in data %}
+          <tr>
+            <!-- Each row name is clickable-->
+            <td><a href={{ url_for('committeePage', id=com.committee_id) }}>{{ com.name }}</a></td>
+            <td>{{ com.abbreviation }}</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div style="flex:50%;height:200px; float:left; padding:20px; background-color: whitesmoke;box-shadow: 2px 2px lightgrey;"> 
+  <p>{{committee_description | default("Committee Description")}}</p>
+</div>
+{% endblock %}

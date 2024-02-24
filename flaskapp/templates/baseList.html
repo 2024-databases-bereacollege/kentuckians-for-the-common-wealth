@@ -1,0 +1,28 @@
+<!-- When extending this class, please fill page_title and page_descript function-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Include DataTables CSS file -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  </head>
+  <body>
+    <div class=container>
+      <h1>{{page_title | default("Committee-Data App")}}</h1>
+      <p>{{page_descript |default("")}}</p>
+      <hr>
+      {% block content %}{% endblock %}
+    </div>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include DataTables JS file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Mini script to attach Datatable functionality to tableID listTable -->   
+    <script>
+      $(document).ready(function () {
+        $('#listTable').DataTable();
+      });
+    </script>
+    {% block scripts %}{% endblock %}  
+  </body>
+  </html>

@@ -1,0 +1,38 @@
+{% extends "baseList.html" %} 
+
+{% block content %}
+<div style="width:300px; flex:50%; float: left; padding: 20px; background-color: lightblue; box-shadow: 2px 2px;">
+    <!-- Generate a list of all your roles to put here. For best results, pass the list as template data in your view function -->
+    <ul> {% for role in selected_roles %}
+        <li>{{role}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<div style="flex:50%; float: left; padding: 20px;">
+  <!-- This table should show the results of your eligibility query, for a given slot-->  
+  <table id = "listTable" class=display flex="50%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Staff Type</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for person in eligible_people %}
+          <tr>
+            <td>{{person.id}}</td>
+            <td>{{person.first_name}}</td>
+            <td>{{person.last_name}}</td>
+            <td>{{person.position_title}}</td>
+            <td>{{person.employee_class}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
