@@ -13,10 +13,12 @@ class baseModel(Model):
 ---------------------------------------------- """
 class Department(baseModel):
     name = CharField()
+    abbr = CharField()
     division = IntegerField(null=True)
 
 class Course(baseModel):
     name = CharField()
+    number = IntegerField()
     instructor = CharField()
     department = ForeignKeyField(Department)
 
