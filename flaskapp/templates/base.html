@@ -1,28 +1,19 @@
-<!-- When extending this class, please fill page_title and page_descript function-->
+<!-- When extending this class, please fill page_title and page_description function-->
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Include DataTables CSS file -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
   </head>
   <body>
-    <div class=container>
-      <h1>{{page_title | default("Committee-Data App")}}</h1>
-      <p>{{page_descript |default("")}}</p>
+    <div class="container">
+      <h1>{{page_title | default("Course Registration")}}</h1>
+      <p>{{page_description |default("")}}</p>
       <hr>
       {% block content %}{% endblock %}
     </div>
-    <!-- Include jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include DataTables JS file -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="/static/main.js"></script>
     
-    <!-- Mini script to attach Datatable functionality to tableID listTable -->   
-    <script>
-      $(document).ready(function () {
-        $('#listTable').DataTable();
-      });
-    </script>
     {% block scripts %}{% endblock %}  
+
   </body>
   </html>
