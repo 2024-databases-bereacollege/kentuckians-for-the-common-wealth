@@ -16,7 +16,8 @@
         "PGHOST": "db",
         "PGUSER": "postgres",
         "PGDATABASE": "postgres",
-        "PGPASSWORD": "postgres"
+        "PGPASSWORD": "postgres",
+		"FLASK_DEBUG": 1
     }
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "python -m pip install --upgrade pip; pip install --user -r requirements.txt"

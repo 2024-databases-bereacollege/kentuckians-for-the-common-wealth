@@ -1,9 +1,8 @@
-"""
-Models to represent database objects
-"""
 from peewee import *
 from datetime import datetime
 
+# Database Configuration
+################################
 mydb = PostgresqlDatabase("postgres",host="db",user="postgres",password="postgres")
 
 class baseModel(Model):
