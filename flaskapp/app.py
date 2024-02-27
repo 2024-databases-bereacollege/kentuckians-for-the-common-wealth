@@ -22,7 +22,7 @@ def courseList():
     courses = Course.select()
     return render_template("courselist.html", 
                             page_title="Course List",
-                            page_description=description, 
+                            page_description="Choose from one of the available courses", 
                             courses=courses)
 
 @app.route('/current/<int:id>', methods=['GET', 'POST'])

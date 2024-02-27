@@ -4,7 +4,7 @@
   Uses the BASELIST template for formatting and javascript. Just add content 
 -->
 
-{% extends "baseList.html" %} 
+{% extends "base.html" %} 
 
 {% block content %}
 <div style="flex:50%; float: left; padding: 20px;">
@@ -13,23 +13,23 @@
     <thead>
       <tr>
         <!-- Do the filtering through the columns -->
-        <th>ID</th>
-        <th>Committee Name</th>
-        <th>Abbreviation</th>
+        <th>Number</th>
+        <th>Course Name</th>
+        <th>Instructor</th>
+        <th>Department</th>
       </tr>
     </thead>
     <tbody>
-        {% for com in data %}
+        {% for course in courses %}
           <tr>
             <!-- Each row name is clickable-->
-            <td><a href={{ url_for('committeePage', id=com.committee_id) }}>{{ com.name }}</a></td>
-            <td>{{ com.abbreviation }}</td>
+            <td>{{course.department.abbr}} {{course.number}}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.instructor }}</td>
+            <td>{{ course.department.name }}</td>
           </tr>
         {% endfor %}
     </tbody>
   </table>
-</div>
-<div style="flex:50%;height:200px; float:left; padding:20px; background-color: whitesmoke;box-shadow: 2px 2px lightgrey;"> 
-  <p>{{committee_description | default("Committee Description")}}</p>
 </div>
 {% endblock %}
