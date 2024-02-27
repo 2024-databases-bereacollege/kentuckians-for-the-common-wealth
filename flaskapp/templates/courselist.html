@@ -9,7 +9,7 @@
 {% block content %}
 <div style="flex:50%; float: left; padding: 20px;">
 
-  <table id = "listTable" class=display flex="50%">
+  <table id = "listTable" class="display" flex="50%">
     <thead>
       <tr>
         <!-- Do the filtering through the columns -->
@@ -27,6 +27,13 @@
             <td>{{ course.name }}</td>
             <td>{{ course.instructor }}</td>
             <td>{{ course.department.name }}</td>
+            <td>
+              <form action="/register" method="POST">
+                <input type="hidden" name="course_id" value="{{course.id}}" />
+                <input type="hidden" name="user_id" value="{{g.user}}" />
+                <input type="submit" value="Register"/>
+              </form>
+            </td>
           </tr>
         {% endfor %}
     </tbody>
