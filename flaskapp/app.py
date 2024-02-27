@@ -14,8 +14,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    #return render_template("index.html")
-    return "<h1>Hello, World!</h1>"
+    return render_template("index.html")
+    #return "<h1>Hello, World!</h1>"
 
 @app.route('/courseList')
 def courseList():

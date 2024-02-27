@@ -26,3 +26,8 @@ class Student(baseModel):
     name = CharField()
     bnumber = CharField()
     classlevel = CharField()
+
+class StudentCourse(baseModel):
+    student = ForeignKeyField(Student)
+    course = ForeignKeyField(Course)
+    registered_on = DateTimeField()
