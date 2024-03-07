@@ -7,6 +7,19 @@ This repository contains a basic web app written in Python using the Flask frame
 To skip to the exercises without reading the rest of this document (are you sure?), go [here](EXERCISES.md).
 
 ## Client / Server Architecture
+
+Most networked applications follow a client/server architecture at some level, where multiple client applications communicate using a specific protocol with one or more server applications. The web browser is the most obvious everyday example, with multiple client browsers (e.g., Chrome, Firefox, Edge, Safari) able to connect to many different web server implementations,  (e.g., Apache, nginx, Tomcat).
+
+![Common client and server applications for Web, Email, SSH, and database systems](images/clientserverexamples.png)
+
+It is important to keep separate in your mind the client/server functionality distinction from a local/remote physical location distinction. Clients and Servers are separate from each other in the roles they fulfill in an application, not because of where they run. While the standard client/server diagram shows the clients communicating with servers over the internet or a remote network, they don't have to.
+
+![Standard diagram of clients communicating with a server on a remote host](images/clientserver-distributed.png)
+
+A system where client and server are operating on the same computer or virtual machine is a very common development paradigm. The following diagram is equally valid.
+
+![Diagram of client communicating with a server on the same computer](images/clientserver-local.png)
+
 ## Web Protocols
 ## Diagram
 
@@ -35,9 +48,11 @@ CSS (Cascading Style Sheets) is used to __style__ our page. We declare style pro
 
 ## Javascript
 
-Javascript is used to control the __behavior__ of our page on the the client-side. This is usually used for validation, asynchronous requests to the web server, and improving the user interface. Some web applications are entirely written in javascript (e.g., React, Angular).
+Javascript is used to control the __behavior__ of our page on the the client-side. This is usually used for validation, asynchronous requests to the web server, and improving the user interface. Some web applications are entirely written in javascript (e.g., React, Angular). Javascript can manipulate the structure of an html page, trigger browser and page events, and interact with the hardware that runs the browser.
 
 ## PostgreSQL
+
+PostgreSQL is an open-source relational database management system (RDBMS).
 
 # Application Description
 ## Model-View-Controller (MVC)
