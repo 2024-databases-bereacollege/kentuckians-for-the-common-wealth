@@ -1,72 +1,58 @@
-# Work in Progress
+# Milestone 1
 
-# Web Basics
+## Business Rules
 
-This repository contains a basic web app written in Python using the Flask framework and a PostgreSQL database. The purpose is to provide a simple, working application that can be examined and edited by someone who is learning the basics of web development. The application can be run using GitHub Codespaces, so no local environment setup is necessary.
+1. A member can belong to only one chapter, but a chapter can have one or many members.
+2. A member can attend one or many events, but an event can be attended by one or more members.
+3. A chapter can organize zero or multiple events, but an event can be organized by one or more chapters.
+4. A member can be anybody who attends an event or fills out a survey created by the chapter.
+5. A member has an engagement score that keeps track of how active or inactive they are.
+6. An engagement score can be obtained when a member attends an event or makes a donation.
+7. A donation can be in the form of monetary, equipment, or service.
+8. A chapter can have only one chapter leader at a time.
+9. A member's demographics include their race, gender, and pronouns.
 
-To skip to the exercises without reading the rest of this document (are you sure?), go [here](EXERCISES.md).
+## Entities
 
-## Client / Server Architecture
+### 1. Chapter
 
-Most networked applications follow a client/server architecture at some level, where multiple client applications communicate using a specific protocol with one or more server applications. The web browser is the most obvious everyday example, with multiple client browsers (e.g., Chrome, Firefox, Edge, Safari) able to connect to many different web server implementations,  (e.g., Apache, nginx, Tomcat).
+A chapter is a group of members in a certain geographical area who have similar interests.
 
-![Common client and server applications for Web, Email, SSH, and database systems](images/clientserverexamples.png)
+**Attributes:**
 
-It is important to keep separate in your mind the client/server functionality distinction from a local/remote physical location distinction. Clients and Servers are separate from each other in the roles they fulfill in an application, not because of where they run. While the standard client/server diagram shows the clients communicating with servers over the internet or a remote network, they don't have to.
+- **Name**: The name of the chapter.
+- **Number of Members**: The number of participants in a chapter.
+- **Chapter Lead**: The person who is in charge of the chapter.
 
-![Standard diagram of clients communicating with a server on a remote host](images/clientserver-distributed.png)
+### 2. Member
 
-A system where client and server are operating on the same computer or virtual machine is a very common development paradigm. The following diagram is equally valid.
+Someone who attends an event or makes a donation.
 
-![Diagram of client communicating with a server on the same computer](images/clientserver-local.png)
+**Attributes:**
 
-## Web Protocols
-## Diagram
+- **Name**: The name of the member (can be first and last name).
+- **ID**: The identification number of the member.
+- **Address**: The address or mailing address of the member.
+- **Phone Number**: The phone number of the member.
+- **Engagement Score**: A metric system that keeps track of how active members are within the chapter.
+- **Demographics**: The demographics of the member entail things like race, gender, and pronouns.
+- **Number of Events Attended**: This entails the number of events attended.
 
-# Technologies
-There are many different ways to put together a web application. This is what we are using:
+### 3. Event
 
-## Python
+An event is a gathering that has one or more members participating.
 
-To generate dynamic pages for the web server to send, we need a programming language. This one uses Python. There are many other options. Alternatives: Javascript, PHP, Perl, C#, Java, just about any other language. 
+**Attributes:**
 
-### Flask
+- **Name**: Event name (event objective).
+- **Date**: Date when the event took place (MM/DD/YYYY).
+- **Venue**: Location of the event.
+- **Attendance**: The number of people at the event.
 
-Flask is a Python web framework. It includes all of the functionality necessary to help structure and generate a web application. It also includes a web server for ease of development. https://flask.palletsprojects.com/en/3.0.x/. Alternatives for Python: Twisted or Django
+## ER Diagram
 
-### Jinja
+![ER Diagram](ER_diagram.PNG)
 
-A templating language lets us re-use html and apply data from our controllers to our html views. It is interspersed throughout the HTML and feels a bit like Python, until you run into something that doesn't. Alternatives for Python: https://wiki.python.org/moin/Templating
+---
 
-## HTML
-
-HTML (Hypertext Markup Language) is a markup language. It describes the __structure__ of our data for the browser (web client). The browser will render the page for the end user with default styling.
-
-## CSS
-
-CSS (Cascading Style Sheets) is used to __style__ our page. We declare style properties in classes that we can apply to our HTML. This lets us re-use styles across our application and provides flexibility. There are tools to add on to CSS (SASS, SCSS, LESS) for further functionality but we are not using them.
-
-## Javascript
-
-Javascript is used to control the __behavior__ of our page on the the client-side. This is usually used for validation, asynchronous requests to the web server, and improving the user interface. Some web applications are entirely written in javascript (e.g., React, Angular). Javascript can manipulate the structure of an html page, trigger browser and page events, and interact with the hardware that runs the browser.
-
-## PostgreSQL
-
-PostgreSQL is an open-source relational database management system (RDBMS).
-
-# Application Description
-## Model-View-Controller (MVC)
-## File Layout
-
-# Running the app
-## With Codespace
-## Without Codespace
-### Requirements
-### Environment
-### Database
-
-## Running Flask
-
-# Troubleshooting
-## 
-## Database Access
+Document Link: https://docs.google.com/document/d/1xs227zgCnU8y_3lzEl-bQvKeSdAjbs4DNt9NGn95F_c/edit
