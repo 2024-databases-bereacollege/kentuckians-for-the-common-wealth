@@ -1,31 +1,27 @@
 # Domain Names
 
-# Member
+# MEMBER
 | Attribute       | Domain Name  | Description                                 | Domain                        |
 |-----------------|--------------|---------------------------------------------|-------------------------------|
-| MemberID        | Member IDs   | Set of all possible member IDs              | character: size 10            |
-| Score           | Scores       | Set of all possible scores                  | integer: 3 digits             |
-| Phone #         | Phone Numbers| Set of all possible member phone numbers    | integer: 10 digits            |
-| MemberName      | Names        | Set of all possible member names            | character: size 25            |
-| Address         | Addresses    | Set of all possible member addresses        | Character: size 30            |
-| Demographic     | Demographics | Set of all possible member demographics     | character: size 25            |
-| Donation        | Donations    | Set of all possible member donations        | character: size 25            |
-| NumberOfEventsAttended | Events| Set of all possible member attended events | integer: 3 digits             |
-
-# Chapter
-| Attribute       | Domain Name  | Description                               | Domain                        |
-|-----------------|--------------|-------------------------------------------|-------------------------------|
-| ChapterName      | Names        | Set of all possible member names          | character: size 25            |
-| NumberOfMembers | Numbers      | Set of all possible member numbers        | integer: 4 digits             |
-| ChapterLead     | Names        | Set of all possible chapter lead names    | character: size 25            |
-
-# Event
-| Attribute   | Domain Name | Description                           | Domain                      |
-|-------------|-------------|---------------------------------------|-----------------------------|
-| EventName   | Names       | Set of all possible member names      | character: size 25          |
-| Venue       | Locations   | Set of all possible locations         | character: size 30          |
-| EventDate   | Dates       | Set of all possible dates             | date: format mm/dd/yy       |
-| Attendance  | Numbers     | Set of all possible member attendance | integer: 3 digits           |
+| MemberID | Member IDs | This variable is going to store distinct member IDs. the IDs will automatically increment as a new member is added. | Serial size 10 |
+| Score | Scores | The score is calculated based on members’ attendance. Every time a member attends an event they get one point. Since the score represents the number of events attended, it would take any value between zero to infinity. | integer: 3 digits |
+| Phone # | Phone Numbers | This variable stores members’ phone numbers. | integer: 10 digits |
+| MemberName | Names | Stores the first and last name of each member in a chapter | character: size 25 |
+| Address | Addresses | The address stores member addresses. The values are going to be a string containing street number, street name, city and zip code. | Character: size 250 |
+| Donation | Donations | This variable stores the donation. A donation can be monetary or non-monetary. | character: size 25 |
+# CHAPTER
+| Attribute       | Domain Name  | Description                                 | Domain                        |
+|-----------------|--------------|---------------------------------------------|-------------------------------|
+| ChapterName | Names | It stores the name of the chapter and serves as a primary key for the member table. | character: size 25 |
+| NumberofMembers | Numbers | This stores the total number of events a member attended. | integer: 4 digits |
+| ChapterLead | Names | This attribute stores the name of the chapter-lead for a particular chapter. | character: 25 |
+# EVENT
+| Attribute       | Domain Name  | Description                                 | Domain                        |
+|-----------------|--------------|---------------------------------------------|-------------------------------|
+| EventName | Names | This stores the name of a particular event. | character: size 25 |
+| Venue | Locations | This stores the location where an event occurred. | character: 30 |
+| EventDate | Dates | This stores the date an event takes place. | date: format mm/dd/yy |
+| NumberOfPeopleAttended | Numbers | This stores the total count of the people who attended an event. | integer: 3 digits |
 
 # Schema
 ![Schema](Updated_Schema.PNG)
